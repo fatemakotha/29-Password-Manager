@@ -15,41 +15,30 @@ logo_image = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_image) #half of 200 is 100, so thats the center of the page
 canvas.grid(column=1, row=0)
 
+#Labels:
 website_label = Label(text="Website:")
-website_label.grid(column=0, row=1)
-
-website_input = Entry(width=36)
-website_input.grid(column=1, row=1, columnspan=2)
-
-login_label = Label(text="Email/Username:")
-login_label.grid(column=0, row=2)
-
-login_input = Entry(width=36)
-login_input.grid(column=1, row=2, columnspan=2)
-
+website_label.grid(row=1, column=0)
+email_label = Label(text="Email/Username:")
+email_label.grid(row=2, column=0)
 password_label = Label(text="Password:")
-password_label.grid(column=0, row=3)
+password_label.grid(row=3, column=0)
 
-#Entry
-password_input = Entry()
-password_input.grid(column=1, row=3)
+#Entries
+website_entry = Entry(width=50)
+website_entry.grid(row=1, column=1, columnspan=2)
+email_entry = Entry(width=50)
+email_entry.grid(row=2, column=1, columnspan=2)
+password_entry = Entry(width=34)
+password_entry.grid(row=3, column=1)
+
+#Buttons:
+generate_password_button = Button(text="Generate Button")
+generate_password_button.grid(row=3, column=2)
+
+add_button = Button(text="Add", width=42)
+add_button.grid(row=4, column=1, columnspan=2)
 
 
-generate_button = Button(text="Generate Button")
-generate_button.grid(column=2, row=3)
-
-add_button = Button(text="Add")
-add_button.grid(column=1, row=4)
-
-
-
-
-
-#Entry
-# miles_input = Entry(width=10)
-# print(miles_input.get())
-# miles_input.grid(column=1, row=0)
-# miles_input.config(width=7)
 
 
 
