@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * #does not install another module of tkinter which is the message box
 from tkinter import messagebox
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -9,6 +9,10 @@ def save():
     email = email_entry.get()
     password = password_entry.get()
 
+    # messagebox.showinfo(title="Title", message="Mess") #shows a title and a message in popup **
+    messagebox.askokcancel(title=website, message=f"These are the details entered: \n "
+                                                  f"Email: {email} \n Password: {password} \n"
+                                                  f" Do you want to save?") #asks ok or cancel in pop up
 
 
     with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
