@@ -1,7 +1,33 @@
 from tkinter import * #does not install another module of tkinter which is the message box
 from tkinter import messagebox
-
+import random
+import pyperclip
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def generate():
+    # Password Generator Project
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+               'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+               'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+    nr_letters = random.randint(8, 10)
+    nr_symbols = random.randint(2, 4)
+    nr_numbers = random.randint(2, 4)
+
+    password_letters = [random.choice(letters) for _ in range(nr_letters)]
+    password_symbols = [random.choice(symbols) for _ in range(nr_symbols)]
+    password_numbers = [random.choice(numbers) for _ in range(nr_numbers)]
+
+    password_list = password_letters + password_symbols +password_numbers #gives: sdf43334&*&#$%453
+    random.shuffle(password_list) #shuffles sdf43334&*&#$%453 to &*&#$%453sdf43334
+
+    # password = ""
+    # for char in password_list:
+    #     password += char
+    password = "".join(password_list)
+    password_entry.insert(0, password) #inserts the randomly generated password into the 0th index of password_entry when user clicks "generate" *
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
@@ -17,7 +43,8 @@ def save():
                                                       f"Email: {email} \n Password: {password} \n"
                                                       f" Do you want to save?") #asks ok or cancel in pop up
                                                       #returns True or False *************
-        #if user clicks OK, then do the following code:
+        #if user clicks Cancel, then is_ok=False
+        #if user clicks Okay, then is_okay=True, then do the following code:
         if is_ok:
             with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
                 data_file.write(f"{website} | {email}| {password}\n")
@@ -70,7 +97,7 @@ password_entry.grid(row=3, column=1)
 #_________________________________________________________________________________________________________________________________________________________________
 
 #Buttons
-generate_password_button = Button(text="Generate Button")
+generate_password_button = Button(text="Generate Button", command=generate)
 generate_password_button.grid(row=3, column=2)
 
 add_button = Button(text="Add", width=42, command=save)
