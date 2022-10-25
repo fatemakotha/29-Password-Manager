@@ -18,11 +18,14 @@ canvas.grid(column=1, row=0)
 website_label = Label(text="Website:")
 website_label.grid(column=0, row=1)
 
-login_label = Label(text="Email/Usernam:")
+login_label = Label(text="Email/Username:")
 login_label.grid(column=0, row=2)
 
-password_label = Label(text="Email/Usernam:")
+password_label = Label(text="Password:")
 password_label.grid(column=0, row=3)
+
+generate_button = Button(text="Generate Button")
+generate_button.grid(column=2, row=3)
 
 
 
