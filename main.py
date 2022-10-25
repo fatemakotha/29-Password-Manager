@@ -18,6 +18,9 @@ canvas.grid(column=1, row=0)
 website_label = Label(text="Website:")
 website_label.grid(column=0, row=1)
 
+website_input = Entry()
+website_input.grid(column=1, row=1)
+
 login_label = Label(text="Email/Username:")
 login_label.grid(column=0, row=2)
 
