@@ -18,14 +18,14 @@ canvas.grid(column=1, row=0)
 website_label = Label(text="Website:")
 website_label.grid(column=0, row=1)
 
-website_input = Entry()
-website_input.grid(column=1, row=1)
+website_input = Entry(width=36)
+website_input.grid(column=1, row=1, columnspan=2)
 
 login_label = Label(text="Email/Username:")
 login_label.grid(column=0, row=2)
 
-login_input = Entry()
-login_input.grid(column=1, row=2)
+login_input = Entry(width=36)
+login_input.grid(column=1, row=2, columnspan=2)
 
 password_label = Label(text="Password:")
 password_label.grid(column=0, row=3)
@@ -38,7 +38,8 @@ password_input.grid(column=1, row=3)
 generate_button = Button(text="Generate Button")
 generate_button.grid(column=2, row=3)
 
-
+add_button = Button(text="Add")
+add_button.grid(column=1, row=4)
 
 
 
