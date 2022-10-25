@@ -1,3 +1,6 @@
+from tkinter import *
+from tkinter import messagebox
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -5,6 +8,9 @@ def save():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+
+
+
     with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
         data_file.write(f"{website} | {email}| {password}\n")
         website_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN WEBSITE TEXTBOX
@@ -16,7 +22,7 @@ def save():
 
 
 # ---------------------------- UI SETUP ------------------------------- #
-from tkinter import *
+
 
 window = Tk()
 window.title("My Password Manager")
