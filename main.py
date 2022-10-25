@@ -21,6 +21,11 @@ website_label.grid(column=0, row=1)
 login_label = Label(text="Email/Usernam:")
 login_label.grid(column=0, row=2)
 
+password_label = Label(text="Email/Usernam:")
+password_label.grid(column=0, row=3)
+
+
+
 
 
 
