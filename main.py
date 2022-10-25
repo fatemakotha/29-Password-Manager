@@ -9,6 +9,7 @@ window = Tk()
 window.title("My Password Manager")
 
 
+canvas = Canvas(width=200, height=200)
 
 
 
