@@ -24,6 +24,11 @@ login_label.grid(column=0, row=2)
 password_label = Label(text="Password:")
 password_label.grid(column=0, row=3)
 
+#Entry
+password_input = Entry()
+password_input.grid(column=1, row=3)
+
+
 generate_button = Button(text="Generate Button")
 generate_button.grid(column=2, row=3)
 
