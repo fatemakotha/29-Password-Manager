@@ -27,7 +27,7 @@ def generate():
     #     password += char
     password = "".join(password_list)
     password_entry.insert(0, password) #inserts the randomly generated password into the 0th index of password_entry when user clicks "generate" *
-
+    pyperclip.copy(password) #insert the text we want to copy, which in this case is the password
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
