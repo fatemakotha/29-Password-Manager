@@ -24,6 +24,9 @@ website_input.grid(column=1, row=1)
 login_label = Label(text="Email/Username:")
 login_label.grid(column=0, row=2)
 
+login_input = Entry()
+login_input.grid(column=1, row=2)
+
 password_label = Label(text="Password:")
 password_label.grid(column=0, row=3)
 
