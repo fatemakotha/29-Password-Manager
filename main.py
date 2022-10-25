@@ -10,15 +10,16 @@ def save():
     password = password_entry.get()
 
     # messagebox.showinfo(title="Title", message="Mess") #shows a title and a message in popup **
-    messagebox.askokcancel(title=website, message=f"These are the details entered: \n "
+    is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered: \n "
                                                   f"Email: {email} \n Password: {password} \n"
                                                   f" Do you want to save?") #asks ok or cancel in pop up
-
-
-    with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
-        data_file.write(f"{website} | {email}| {password}\n")
-        website_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN WEBSITE TEXTBOX
-        password_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN PASSWORD TEXTBOX
+                                                  #returns True or False *************
+    #if user clicks OK, then do the following code:
+    if is_ok:
+        with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
+            data_file.write(f"{website} | {email}| {password}\n")
+            website_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN WEBSITE TEXTBOX
+            password_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN PASSWORD TEXTBOX
 
 
 
