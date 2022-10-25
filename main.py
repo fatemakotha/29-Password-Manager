@@ -7,6 +7,8 @@ def save():
     password = password_entry.get()
     with open("data.txt", "a") as data_file: #opens in append mode and creates the file names info.txt as there is no file of that name here
         data_file.write(f"{website} | {email}| {password}\n")
+        website_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN WEBSITE TEXTBOX
+        password_entry.delete(0, END) #CLEARS EVERYTHING FROM 0TH INDEX TO LAST IN PASSWORD TEXTBOX
 
 
 
